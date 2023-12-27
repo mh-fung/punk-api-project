@@ -1,11 +1,14 @@
 import './App.scss';
-import ExploreBeers from './components/containers/ExploreBeers/ExploreBeers';
+import Content from './components/containers/Content/Content';
+import Nav from './components/containers/Nav/Nav';
 // import endpoints from './data/endpoints';
 import { Beer } from './types/types';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>();
+
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const getBeers = async () => {
     const responsePage1 = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
@@ -20,6 +23,10 @@ function App() {
     const dataPage5: Beer[] = await responsePage5.json();
     const dataAll = dataPage1.concat(dataPage2, dataPage3, dataPage4, dataPage5)
     setBeers(dataAll)
+  };
+
+  const handleInput = (event: FormEvent<HTMLInputElement>) => {
+      setSearchTerm(event.currentTarget.value)
   };
   //   let dataAll: Beer[]
     
@@ -36,9 +43,10 @@ function App() {
     getBeers();
   }, []);
   return (
-    <>
-    {beers && <ExploreBeers beers={beers}/>}
-    </>
+    <div>
+      <Nav handleInput={handleInput} />
+      {beers && <Content beers={beers} searchTerm={searchTerm}/>}
+    </div>
   )
 }
 
