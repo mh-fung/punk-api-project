@@ -1,20 +1,20 @@
 import "./BeerCard.scss";
-import { Beer
- } from "../../types/types";
 type BeerCardProps = {
-    beers: Beer[];
+    name: string;
+    tagline: string;
+    image: string;
 }
 
-
-const BeerCard = ({beers}: BeerCardProps) => {
+const BeerCard = ({name, tagline, image}: BeerCardProps) => {
     
     return (
-        <div className="beerCardsContainer">{beers.map((beer) => (
+        <div className="beerCardsContainer">
             <div className="beerCard">
-                <p className="beerCard__name">Name: {beer.name}</p>
-                <img className="beerCard__image" src={beer.image_url} alt={beer.name} />
+                <p className="beerCard__name">Name: {name}</p>
+                <p>{tagline}</p>
+                <img className="beerCard__image" src={image} alt={name} />
             </div>
-        ))}</div>
+        </div>
     )
 };
 

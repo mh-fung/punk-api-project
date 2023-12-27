@@ -1,5 +1,5 @@
 import './App.scss';
-import BeerCard from './components/BeerCard/BeerCard';
+import ExploreBeers from './components/containers/ExploreBeers/ExploreBeers';
 import { Beer } from './types/types';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +17,7 @@ function App() {
   }, []);
   return (
     <>
-    {beers && <BeerCard beers={beers}/>}
+    {beers && <ExploreBeers beers={beers}/>}
     </>
   )
 }
