@@ -1,24 +1,18 @@
-import { useState, FormEvent } from "react";
+import { FormEventHandler} from "react";
 import { Filter } from "../../types/types";
 import "./FilterItem.scss";
 
 type FilterItemProps = {
     filter: Filter
-    handleChecked: (event: FormEvent<HTMLInputElement>) => void;
+    handleChecked: FormEventHandler<HTMLInputElement>;
 };
 
 const FilterItem = ({filter, handleChecked}: FilterItemProps) => {
-    const [isChecked, setIsChecked] = useState(false);
-
-    const onClick = () => {
-        handleChecked
-        setIsChecked(!isChecked)
-    }
 
     return (
         <div>
             <label htmlFor="">{filter.label}</label>
-            <input className="checkbox" type="checkbox" onClick={onClick}/>
+            <input className="checkbox" type="checkbox" value={filter.label} onClick={handleChecked}/>
         </div>
     )
 };

@@ -10,7 +10,7 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const [filters, setFilters] = useState([
+  const [filters, setFilters] = useState<Filter[]>([
     {label: "High ABV (> 6.0%)", isChecked: false}, 
     {label: "Classis Range", isChecked: false}, 
     {label: "Acidic (ph < 4)", isChecked: false}
@@ -45,7 +45,15 @@ function App() {
   // };
 
   const handleChecked = (event: FormEvent<HTMLInputElement>) => {
-    
+    const updatedFilters = filters.map((filter => {
+      if(event.currentTarget.value === filter.label) {
+        return {label: filter.label, isChecked: event.currentTarget.checked}
+      } else {
+        return {label: filter.label, isChecked: filter.isChecked}
+      }
+    }));
+    console.log(updatedFilters)
+    setFilters(updatedFilters)
   }
 
   useEffect(() => {
@@ -54,9 +62,9 @@ function App() {
   return (
     <div>
       <Nav filters={filters} handleInput={handleInput} handleChecked={handleChecked} />
-      {beers && <Content beers={beers} searchTerm={searchTerm}/>}
+      {beers && <Content filters={filters} beers={beers} searchTerm={searchTerm}/>}
     </div>
   )
 }
 
-export default App
+export default App;
