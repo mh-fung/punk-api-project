@@ -2,7 +2,7 @@ import './App.scss';
 import Content from './components/containers/Content/Content';
 import Nav from './components/containers/Nav/Nav';
 // import endpoints from './data/endpoints';
-import { Beer } from './types/types';
+import { Beer, Filter } from './types/types';
 import { useEffect, useState, FormEvent } from 'react';
 
 function App() {
@@ -10,6 +10,11 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  const [filters, setFilters] = useState([
+    {label: "High ABV (> 6.0%)", isChecked: false}, 
+    {label: "Classis Range", isChecked: false}, 
+    {label: "Acidic (ph < 4)", isChecked: false}
+  ])
   const getBeers = async () => {
     const responsePage1 = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
     const dataPage1: Beer[] = await responsePage1.json();
@@ -39,12 +44,16 @@ function App() {
   //   setBeers(dataAll)
   // };
 
+  const handleChecked = (event: FormEvent<HTMLInputElement>) => {
+    
+  }
+
   useEffect(() => {
     getBeers();
   }, []);
   return (
     <div>
-      <Nav handleInput={handleInput} />
+      <Nav filters={filters} handleInput={handleInput} handleChecked={handleChecked} />
       {beers && <Content beers={beers} searchTerm={searchTerm}/>}
     </div>
   )
