@@ -8,7 +8,7 @@ type SearchBoxProps = {
 
 const SearchBox = ({label, handleInput}: SearchBoxProps) => {
     return (
-        <div>
+        <div className="searchBox">
             <label htmlFor={label}>{label}</label>
             <input className="input" type="text" onInput={handleInput}/>
         </div>

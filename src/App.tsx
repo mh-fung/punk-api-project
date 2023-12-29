@@ -52,7 +52,7 @@ function App() {
         return {label: filter.label, isChecked: filter.isChecked}
       }
     }));
-    console.log(updatedFilters)
+    // console.log(updatedFilters)
     setFilters(updatedFilters)
   }
 
@@ -60,7 +60,8 @@ function App() {
     getBeers();
   }, []);
   return (
-    <div>
+    <div className="app">
+      <header className="header">PUNK-API</header>
       <Nav filters={filters} handleInput={handleInput} handleChecked={handleChecked} />
       {beers && <Content filters={filters} beers={beers} searchTerm={searchTerm}/>}
     </div>

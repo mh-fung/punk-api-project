@@ -13,7 +13,7 @@ const FiltersList = ({filters, handleChecked}:FiltersListProps) => {
         return <FilterItem filter={filter} handleChecked={handleChecked}/>
     }))
     return (
-        <div>
+        <div className="filters">
             {displayedFilters}
         </div>
     )

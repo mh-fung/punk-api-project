@@ -12,7 +12,7 @@ type NavProps = {
 
 const Nav = ({filters, handleInput, handleChecked}:NavProps) => {
     return (
-        <div>
+        <div className="Nav">
             <SearchBox label="Search by Name: " handleInput={handleInput}/>
             <FiltersList filters={filters} handleChecked={handleChecked}/>
         </div>

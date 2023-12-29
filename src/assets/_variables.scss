@@ -3,8 +3,9 @@ $color-black: black;
 $color-white: white;
 
 //fonts
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-$font-body: Titillium Web, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik+Glitch&display=swap');
+$font-title: Rubik Glitch, sans-serif;
+$font-body: Inter, sans-serif;
 
 //breakpoint variable
 $tablet-breakpoint: 768px;
