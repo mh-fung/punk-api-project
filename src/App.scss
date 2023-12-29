@@ -13,3 +13,15 @@
     font-size: 40px;
     font-family: $font-title;
 }
+
+@media screen and (min-width:$desktop-breakpoint) {
+    .app {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr;
+
+        .header {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}

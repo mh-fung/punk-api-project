@@ -13,9 +13,9 @@ const BeerCard = ({id, name, tagline, abv, image}: BeerCardProps) => {
         <div key={id} className="beerCardContainer">
             <div className="beerCard">
                 <p className="beerCard__name">Name: {name}</p>
-                <p className="beerCard__tagline">{tagline}</p>
-                <p>ABV: {abv}</p>
+                <p>ABV: {abv}%</p>
                 <img className="beerCard__image" src={image} alt={name} />
+                <p className="beerCard__tagline">{tagline}</p>
             </div>
         </div>
     )

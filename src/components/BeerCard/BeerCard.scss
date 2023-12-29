@@ -1,9 +1,11 @@
+@use "../../assets/variables" as *;
 
 .beerCardContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
+
     .beerCard {
         display: flex;
         flex-direction: column;
@@ -14,14 +16,31 @@
 
         &__name {
             padding: 5px 0px;
+            text-align: center;
         }
-        &__tagline{
+
+        &__tagline {
             padding-bottom: 5px;
+            text-align: center;
         }
+
         &__image {
             width: 50vw;
             height: 40vh;
             padding: 10px 0px;
         }
+    }
 }
+
+@media screen and (min-width:$desktop-breakpoint) {
+    .beerCardContainer {
+        width: 20vw;
+        .beerCard {
+            width: 20vw;
+            &__image {
+                width: 15vw;
+                height: 30vh;
+            }
+        }
+    }
 }

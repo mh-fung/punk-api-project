@@ -3,3 +3,9 @@
 .filters {
     padding: 5px;
 }
+
+@media screen and (min-width:$desktop-breakpoint) {
+    .filters {
+        padding-top: 30vh;
+    }
+}
