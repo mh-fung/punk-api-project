@@ -38,12 +38,12 @@ const BeerCard = ({
   );
 
   const backContent = (
-    <div className="cardback">
+    <div className="cardBack">
       <p className="beerCard__information">Name: {name}</p>
       <p className="beerCard__information">ABV: {abv}%</p>
       <p>First Brewed: {firstBrewed}</p>
       <p>ph: {ph}</p>
-      <p>{description}</p>
+      <p className="cardBack__description">{description}</p>
       <div onClick={handlClick}>
         <button>Back</button>
       </div>
