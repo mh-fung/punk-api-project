@@ -37,9 +37,12 @@
         width: 20vw;
         .beerCard {
             width: 20vw;
+            height: 475.8px;
+            display: flex;
+            justify-content: space-between;
             &__image {
-                width: 15vw;
-                height: 30vh;
+                width: 100%;
+                object-fit: contain;
             }
         }
     }

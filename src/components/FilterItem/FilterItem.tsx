@@ -10,9 +10,9 @@ type FilterItemProps = {
 const FilterItem = ({filter, handleChecked}: FilterItemProps) => {
 
     return (
-        <div>
-            <label htmlFor="">{filter.label} </label>
-            <input className="checkbox" type="checkbox" value={filter.label} onClick={handleChecked}/>
+        <div className="filterItem">
+            <label className="filterItem__label">{filter.label} </label>
+            <input className="filterItem__checkbox" type="checkbox" value={filter.label} onClick={handleChecked}/>
         </div>
     )
 };
