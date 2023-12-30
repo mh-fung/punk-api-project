@@ -1,49 +1,54 @@
 @use "../../assets/variables" as *;
 
 .beerCardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
 
-    .beerCard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid black;
-        border-radius: 10px;
-        width: 90vw;
+  .beerCard {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90vw;
 
-        &__name {
-            padding: 5px 0px;
-            text-align: center;
-        }
-
-        &__tagline {
-            padding-bottom: 5px;
-            text-align: center;
-        }
-
-        &__image {
-            width: 50vw;
-            height: 40vh;
-            padding: 10px 0px;
-        }
+    &__information {
+      padding: 5px 0px;
+      text-align: center;
     }
+
+    .cardFront {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__tagline {
+        padding-bottom: 5px;
+        text-align: center;
+      }
+
+      &__image {
+        width: 50vw;
+        height: 40vh;
+        padding: 10px 0px;
+      }
+    }
+  }
 }
 
-@media screen and (min-width:$desktop-breakpoint) {
-    .beerCardContainer {
-        width: 20vw;
-        .beerCard {
-            width: 20vw;
-            height: 475.8px;
-            display: flex;
-            justify-content: space-between;
-            &__image {
-                width: 100%;
-                object-fit: contain;
-            }
+@media screen and (min-width: $desktop-breakpoint) {
+  .beerCardContainer {
+    width: 20vw;
+    .beerCard {
+      width: 20vw;
+      height: 475.8px;
+      display: flex;
+      justify-content: space-between;
+
+      .cardFront {
+        &__image {
+          width: 100%;
+          height: 10vh;
         }
+      }
     }
+  }
 }

@@ -38,6 +38,9 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
         tagline={beer.tagline}
         abv={beer.abv}
         image={beer.image_url}
+        firstBrewed={beer.first_brewed}
+        ph={beer.ph}
+        description={beer.description}
       />
     );
   });
