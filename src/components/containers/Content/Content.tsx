@@ -10,9 +10,7 @@ type ContentProps = {
 
 const Content = ({filters, beers, searchTerm}: ContentProps) => {
     return (
-        <div>
-            <CardList filters={filters} beers={beers} searchTerm={searchTerm}/>
-        </div>
+    <CardList filters={filters} beers={beers} searchTerm={searchTerm}/>
     )
 }
 

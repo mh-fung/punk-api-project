@@ -9,9 +9,9 @@ type FiltersListProps = {
 }
 
 const FiltersList = ({filters, handleChecked}:FiltersListProps) => {
-    const displayedFilters = filters.map((filter => {
-        return <FilterItem filter={filter} handleChecked={handleChecked}/>
-    }))
+    const displayedFilters = filters.map((filter, index) => {
+        return <FilterItem key={"filter" + index} filter={filter} handleChecked={handleChecked}/>
+    })
     return (
         <div className="filters">
             {displayedFilters}
