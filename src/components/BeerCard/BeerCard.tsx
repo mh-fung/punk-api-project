@@ -32,7 +32,7 @@ const BeerCard = ({
       <img className="cardFront__image" src={image} alt={name} />
       <p className="cardFront__tagline">{tagline}</p>
       <div onClick={handlClick}>
-        <button>Click for more information</button>
+        <button className="beerCard__button">Click for more information</button>
       </div>
     </div>
   );
@@ -45,7 +45,7 @@ const BeerCard = ({
       <p>ph: {ph}</p>
       <p className="cardBack__description">{description}</p>
       <div onClick={handlClick}>
-        <button>Back</button>
+        <button className="beerCard__button">Back</button>
       </div>
     </div>
   );

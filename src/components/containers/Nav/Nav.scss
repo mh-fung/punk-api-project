@@ -1,5 +1,7 @@
 @use "../../../assets/variables" as *;
 
 .Nav {
-    margin: 20px;
+  margin: 20px;
+  background-color: $color-grey;
+  color: $color-white;
 }

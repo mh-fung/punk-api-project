@@ -1,27 +1,32 @@
 @use "./assets/variables" as *;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: $font-body;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-body;
 }
 
+.app {
+  background-color: $color-grey;
+}
 .header {
-    margin: 20px;
-    text-align: center;
-    font-size: 40px;
-    font-family: $font-title;
+  margin: 20px;
+  text-align: center;
+  font-size: 40px;
+  font-family: $font-title;
+  background-color: $color-grey;
+  color: $color-highlight;
 }
 
-@media screen and (min-width:$desktop-breakpoint) {
-    .app {
-        display: grid;
-        grid-template-columns: 0.5fr 2fr;
+@media screen and (min-width: $desktop-breakpoint) {
+  .app {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
 
-        .header {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
+    .header {
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
+  }
 }

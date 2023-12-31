@@ -4,31 +4,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px;
+  padding: 20px;
+  color: $color-white;
+  justify-self: center;
 
   .beerCard {
-    border: 1px solid black;
+    border: 1px solid $color-white;
     border-radius: 10px;
     width: 90vw;
-    height: 55vh;
+    height: 58vh;
+    background: radial-gradient(circle, $color-white 0%, $color-background 70%);
 
     &__information {
       padding: 5px 0px;
       text-align: center;
     }
 
+    &__button {
+      background-color: $color-highlight;
+      border: 1px solid $color-background;
+      color: $color-white;
+      padding: 3px;
+      border-radius: 3px;
+      border-bottom: 3px $color-white double;
+    }
+
     .cardFront {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 90vw;
+      height: 55vh;
 
       &__image {
         width: 50vw;
         height: 40vh;
         padding: 10px 0px;
+        object-fit: contain;
+        background-color: $color-white;
+        border-radius: 5px;
       }
       &__tagline {
-        padding-bottom: 5px;
+        padding: 10px 0px;
         text-align: center;
       }
     }
@@ -37,8 +54,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: $color-grey;
+      border-radius: 10px;
+      height: 57vh;
       &__description {
         padding: 5px;
+        overflow-y: auto;
       }
     }
   }
@@ -49,15 +70,19 @@
     width: 20vw;
     .beerCard {
       width: 20vw;
-      height: 475.8px;
+      height: 40vh;
       display: flex;
       justify-content: space-between;
 
       .cardFront {
         &__image {
-          width: 100%;
-          height: 100%;
+          width: 15vw;
+          height: 20vh;
         }
+      }
+
+      .cardBack {
+        height: 39.7vh;
       }
     }
   }

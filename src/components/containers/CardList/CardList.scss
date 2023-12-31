@@ -1,8 +1,13 @@
 @use "../../../assets/variables" as *;
 
-@media screen and (min-width:$desktop-breakpoint) {
-    .CardList {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+.CardList {
+  background-color: $color-background;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .CardList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

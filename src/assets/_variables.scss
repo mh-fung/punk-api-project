@@ -1,9 +1,11 @@
 //colour variables
-$color-black: black;
-$color-white: white;
+$color-grey: #363333;
+$color-background: #272121;
+$color-highlight: #e16428;
+$color-white: #f6e9e9;
 
 //fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik+Glitch&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Rubik+Glitch&display=swap");
 $font-title: Rubik Glitch, sans-serif;
 $font-body: Inter, sans-serif;
 
