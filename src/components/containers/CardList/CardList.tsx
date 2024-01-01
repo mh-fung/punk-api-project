@@ -45,7 +45,17 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
     );
   });
 
-  return <div className="CardList">{displayedBeers}</div>;
+  if (filteredBeers.length == 0) {
+    return (
+      <div className="CardList--blank">
+        {" "}
+        Can't find what you'd like to drink? No worries! There will be one in
+        the future!{" "}
+      </div>
+    );
+  } else {
+    return <div className="CardList">{displayedBeers}</div>;
+  }
 };
 
 export default CardList;

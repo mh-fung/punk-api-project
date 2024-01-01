@@ -5,6 +5,14 @@
   border-radius: 10px;
 }
 
+.CardList--blank {
+  color: $color-highlight;
+  text-align: center;
+  font-size: 20px;
+  padding: 20vh 0px;
+  padding-bottom: 100%;
+}
+
 @media screen and (min-width: $desktop-breakpoint) {
   .CardList {
     display: grid;

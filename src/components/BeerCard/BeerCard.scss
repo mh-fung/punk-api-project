@@ -22,11 +22,21 @@
 
     &__button {
       background-color: $color-highlight;
-      border: 1px solid $color-background;
+      border: 1px solid $color-highlight;
       color: $color-white;
       padding: 3px;
       border-radius: 3px;
       border-bottom: 3px $color-white double;
+      cursor: pointer;
+    }
+
+    &__button:hover {
+      color: $color-background;
+    }
+
+    &__button:active {
+      position: relative;
+      top: 2px;
     }
 
     .cardFront {
