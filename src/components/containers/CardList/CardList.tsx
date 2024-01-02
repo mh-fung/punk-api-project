@@ -1,6 +1,8 @@
+import { FormEvent, useState } from "react";
 import { Beer, Filter } from "../../../types/types";
 import BeerCard from "../../BeerCard/BeerCard";
 import "./CardList.scss";
+import Pagination from "../../Pagination/Pagination";
 
 type CardListProps = {
   filters: Filter[];
@@ -9,6 +11,8 @@ type CardListProps = {
 };
 
 const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const cardsPerPage = 45;
   const checkedFilters = filters
     .filter((filter) => filter.isChecked == true)
     .map((filter) => filter.label);
@@ -31,7 +35,15 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
   const sortedBeers = [...filteredBeers].sort((a, b) =>
     a.name.localeCompare(b.name)
   );
-  const displayedBeers = sortedBeers.map((beer) => {
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const shownBeers = sortedBeers.slice(indexOfFirstCard, indexOfLastCard);
+
+  const handleChangePage = (event: FormEvent) => {
+    setCurrentPage(Number(event.currentTarget.textContent));
+  };
+
+  const displayedBeers = shownBeers.map((beer) => {
     return (
       <BeerCard
         key={beer.id}
@@ -55,7 +67,19 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
       </div>
     );
   } else {
-    return <div className="CardList">{displayedBeers}</div>;
+    return (
+      <div className="CardList">
+        {displayedBeers}
+        {checkedFilters.length == 0 && searchTerm == "" && (
+          <Pagination
+            cardsPerPage={cardsPerPage}
+            totalCards={beers.length}
+            currentPage={currentPage}
+            handlChangePage={handleChangePage}
+          />
+        )}
+      </div>
+    );
   }
 };
 

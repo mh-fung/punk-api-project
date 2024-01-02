@@ -1,0 +1,20 @@
+@use "../../assets/variables" as *;
+
+.pagination {
+  background-color: $color-background;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  padding: 10px;
+  color: $color-white;
+  text-align: center;
+
+  &__number {
+    padding: 10px 5px;
+    font-size: 20px;
+  }
+  .active {
+    background-color: $color-highlight;
+    border: 1px solid $color-white;
+    border-radius: 3px;
+  }
+}
