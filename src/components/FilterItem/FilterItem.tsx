@@ -15,5 +15,4 @@ const FilterItem = ({ filter, handleChecked }: FilterItemProps) => {
     </div>
   );
 };
-
 export default FilterItem;

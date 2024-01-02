@@ -21,7 +21,7 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
       checkedFilters.includes("High ABV (> 6.0%)") ? beer.abv > 6 : beer
     )
     .filter((beer) =>
-      checkedFilters.includes("Classis Range")
+      checkedFilters.includes("Classic Range")
         ? Number(beer.first_brewed.slice(-4)) < 2010
         : beer
     )

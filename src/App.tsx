@@ -6,24 +6,22 @@ import { useEffect, useState, FormEvent } from "react";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>();
+
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [filters, setFilters] = useState<Filter[]>([
     { label: "High ABV (> 6.0%)", isChecked: false },
-    { label: "Classis Range", isChecked: false },
+    { label: "Classic Range", isChecked: false },
     { label: "Acidic (ph < 4)", isChecked: false },
   ]);
 
-  const endpoints = [
-    "https://api.punkapi.com/v2/beers?page=1&per_page=80",
-    "https://api.punkapi.com/v2/beers?page=2&per_page=80",
-    "https://api.punkapi.com/v2/beers?page=3&per_page=80",
-    "https://api.punkapi.com/v2/beers?page=4&per_page=80",
-    "https://api.punkapi.com/v2/beers?page=5&per_page=80",
-  ];
+  const pages = [1, 2, 3, 4, 5];
+
   const getBeers = async () => {
-    const dataAll = endpoints.map(async (endpoints) => {
-      const response = await fetch(endpoints);
+    const dataAll = pages.map(async (page) => {
+      const response = await fetch(
+        `https://api.punkapi.com/v2/beers?page=${page}&per_page=80`
+      );
       const data: Beer[] = await response.json();
       return data;
     });
@@ -49,6 +47,7 @@ function App() {
   useEffect(() => {
     getBeers();
   }, []);
+
   return (
     <div className="app">
       <header className="header">PUNK-API</header>
