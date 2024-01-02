@@ -12,6 +12,7 @@ const CardList = ({ filters, beers, searchTerm }: CardListProps) => {
   const checkedFilters = filters
     .filter((filter) => filter.isChecked == true)
     .map((filter) => filter.label);
+
   const filteredBeers = beers
     .filter((beer) => {
       return beer.name.toLowerCase().includes(searchTerm.toLowerCase());
