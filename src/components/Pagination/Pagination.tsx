@@ -5,7 +5,7 @@ type PaginationProps = {
   cardsPerPage: number;
   totalCards: number;
   currentPage: number;
-  handlChangePage: FormEventHandler;
+  handlChangePage: FormEventHandler<HTMLAnchorElement>;
 };
 
 const Pagination = ({

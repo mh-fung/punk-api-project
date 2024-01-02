@@ -1,5 +1,14 @@
 @use "../../assets/variables" as *;
 
 .searchBox {
+  padding: 5px;
+  .input {
+    background: linear-gradient(90deg, $color-highlight 0%, $color-white 200%);
+    color: $color-grey;
+    border: 1px solid $color-white;
+    height: 25px;
+    margin: 10px 0px;
     padding: 5px;
+    border-radius: 5px;
+  }
 }

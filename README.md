@@ -1,6 +1,12 @@
 # Punk API project
 
-The aim of this project is to build a website using React based on the PUNK API.
+The aim of this project is to build a website using React based on the PUNK API. Data is rendered from the API and displayed. Users can use the input box to search for certain items or filter the data with the checkboxes.
+
+## Components Tree
+
+The following components tree shows the structure of the website.
+
+![Components Tree](/src/assets/ComponentsTree.png)
 
 ## Code Snippets
 
